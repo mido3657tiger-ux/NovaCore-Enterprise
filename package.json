@@ -2,10 +2,10 @@
   "name": "novacore-quantum-shield",
   "version": "4.0.0",
   "description": "Next-Gen AI Threat Hunting & Zero-Day Ransomware Immunizer Core",
-  "main": "core/main-engine.js",
+  "main": "core/server.js",
   "type": "commonjs",
   "scripts": {
-    "start": "node core/main-engine.js",
+    "start": "node core/server.js",
     "analyzer": "node core/ai-analyzer.js",
     "honeypot": "node network/honeypot-trigger.js",
     "scanner": "node scanner/vulnerability-hunter.js"

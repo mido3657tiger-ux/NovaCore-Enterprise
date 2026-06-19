@@ -8,7 +8,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;900&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <style>
         body {
             font-family: 'Share Tech Mono', monospace;
@@ -16,187 +15,175 @@
             color: #00ffcc;
             background-image: radial-gradient(circle at 50% 50%, #101025 0%, #05050a 100%);
         }
-        .cyber-title {
-            font-family: 'Orbitron', sans-serif;
-            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
-        }
-        .cyber-panel {
-            background: rgba(10, 10, 25, 0.75);
-            border: 1px solid #00ffcc;
-            box-shadow: 0 0 15px rgba(0, 255, 204, 0.15);
-        }
-        .cyber-panel-alert {
-            background: rgba(30, 5, 10, 0.75);
-            border: 1px solid #ff0055;
-            box-shadow: 0 0 15px rgba(255, 0, 85, 0.15);
-        }
-        .glitch-text {
-            animation: pulse 2s infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+        .cyber-title { font-family: 'Orbitron', sans-serif; text-shadow: 0 0 10px #00ffcc; }
+        .cyber-panel { background: rgba(10, 10, 25, 0.85); border: 1px solid #00ffcc; box-shadow: 0 0 15px rgba(0, 255, 204, 0.1); }
+        .cyber-tab-active { background: #00ffcc !important; color: #000 !important; font-weight: bold; box-shadow: 0 0 10px #00ffcc; }
+        .hidden-view { display: none; }
     </style>
 </head>
 <body class="p-4 md:p-8">
 
-    <header class="cyber-panel w-full p-4 mb-6 flex flex-col md:flex-row justify-between items-center rounded border-b-2">
+    <header class="cyber-panel w-full p-4 mb-6 flex flex-col md:flex-row justify-between items-center rounded">
         <div class="flex items-center gap-4">
-            <div class="bg-black border-2 border-cyan-400 p-3 rounded-full text-center tracking-widest font-bold text-xl text-cyan-400 shadow-[0_0_10px_#00ffcc]">
-                TX
-            </div>
+            <div class="bg-black border-2 border-cyan-400 p-3 rounded-full text-center tracking-widest font-bold text-xl text-cyan-400 shadow-[0_0_10px_#00ffcc]">TX</div>
             <div>
-                <h1 class="cyber-title text-2xl font-black tracking-wider text-cyan-400">NOVACORE QUANTUM SHIELD</h1>
-                <p class="text-xs text-gray-400 font-mono">ENTERPRISE SECURITY OPERATIONS CENTER // OPERATOR: TIGER-X</p>
+                <h1 class="cyber-title text-2xl font-black text-cyan-400">NOVACORE COMMAND PANEL</h1>
+                <p class="text-xs text-gray-400">CHIEF OPERATOR: MOHAMED // CODE-NAME: TIGER-X</p>
             </div>
         </div>
-        <div class="mt-4 md:mt-0 flex gap-4 items-center">
-            <div class="flex items-center gap-2">
-                <span class="w-3 h-3 bg-green-500 rounded-full animate-ping"></span>
-                <span class="text-green-400 font-bold" id="system-status">CORE: OPERATIONAL</span>
-            </div>
-            <div class="text-xs bg-cyan-950 px-3 py-1 border border-cyan-500 text-cyan-300">v4.0.0 (STABLE)</div>
+        <div class="flex flex-wrap gap-2 mt-4 md:mt-0">
+            <button onclick="switchView('dashboard')" id="btn-dashboard" class="cyber-tab-active px-3 py-1.5 border border-cyan-400 text-xs uppercase tracking-wider">Dashboard</button>
+            <button onclick="switchView('scanner')" id="btn-scanner" class="px-3 py-1.5 border border-cyan-400 text-cyan-400 text-xs uppercase tracking-wider hover:bg-cyan-950">AI Scanner</button>
+            <button onclick="switchView('vault')" id="btn-vault" class="px-3 py-1.5 border border-cyan-400 text-cyan-400 text-xs uppercase tracking-wider hover:bg-cyan-950">Security Vault</button>
+            <button onclick="switchView('operator')" id="btn-operator" class="px-3 py-1.5 border border-cyan-400 text-cyan-400 text-xs uppercase tracking-wider hover:bg-cyan-950">Contact Secure</button>
         </div>
     </header>
 
-    <div class="grid grid-cols-1 lg:grid-cols-4 gap-6">
-        
-        <div class="lg:col-span-1 flex flex-col gap-6">
-            <div class="cyber-panel p-4 rounded">
-                <h3 class="cyber-title text-sm font-bold mb-4 border-b border-cyan-800 pb-2 text-cyan-300"><i class="fa-solid fa-sliders mr-2"></i>COMMAND TERMINAL</h3>
-                <div class="flex flex-col gap-3">
-                    <button onclick="triggerQuickScan()" class="w-full bg-cyan-900/40 hover:bg-cyan-500 hover:text-black transition duration-300 border border-cyan-400 py-2 font-bold text-sm">
-                        <i class="fa-solid fa-radar mr-2"></i>LAUNCH AI VULN HUNTER
-                    </button>
-                    <button class="w-full bg-red-950/40 hover:bg-red-600 hover:text-white transition duration-300 border border-red-500 py-2 font-bold text-sm text-red-400">
-                        <i class="fa-solid fa-shield-halved mr-2"></i>FLUSH FIREWALL RULES
-                    </button>
-                    <button class="w-full bg-gray-900/60 hover:bg-gray-700 transition duration-300 border border-gray-500 py-2 font-bold text-sm text-gray-400">
-                        <i class="fa-solid fa-download mr-2"></i>EXPORT ENCRYPTED AUDIT
-                    </button>
-                </div>
+    <div id="view-dashboard" class="space-y-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div class="cyber-panel p-4 rounded flex justify-between items-center">
+                <div><p class="text-xs text-gray-400">ISOLATED HOSTS</p><h2 class="text-3xl font-black text-red-500 cyber-title mt-1" id="count-banned">0</h2></div>
+                <i class="fa-solid fa-user-slash text-3xl text-red-900"></i>
             </div>
-
-            <div class="cyber-panel p-4 rounded">
-                <h3 class="cyber-title text-sm font-bold mb-4 border-b border-cyan-800 pb-2 text-cyan-300"><i class="fa-solid fa-microchip mr-2"></i>TELEMETRY METRICS</h3>
-                <div class="space-y-3 text-xs">
-                    <div class="flex justify-between">
-                        <span class="text-gray-400">AI HEURISTIC ENGINE:</span>
-                        <span class="text-emerald-400 font-bold" id="metric-ai">ACTIVE (12%)</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-400">RANSOMWARE IMMUNIZER:</span>
-                        <span class="text-emerald-400 font-bold" id="metric-crypto">SECURE (45%)</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-400">HONEYPOT DECOYS:</span>
-                        <span class="text-emerald-400 font-bold">ACTIVE (Ports: 21,22,23)</span>
-                    </div>
-                    <div class="flex justify-between">
-                        <span class="text-gray-400">LOG FORWARDER:</span>
-                        <span class="text-yellow-400 font-bold">STANDBY</span>
-                    </div>
-                </div>
+            <div class="cyber-panel p-4 rounded flex justify-between items-center">
+                <div><p class="text-xs text-gray-400">BUFFER INCOMING MEMORY</p><h2 class="text-3xl font-black text-cyan-400 cyber-title mt-1">8.6 MB</h2></div>
+                <i class="fa-solid fa-database text-3xl text-cyan-900"></i>
+            </div>
+            <div class="cyber-panel p-4 rounded flex justify-between items-center">
+                <div><p class="text-xs text-gray-400">AI DETECTOR RATE</p><h2 class="text-3xl font-black text-purple-400 cyber-title mt-1">99.8%</h2></div>
+                <i class="fa-solid fa-brain text-3xl text-purple-900"></i>
             </div>
         </div>
-
-        <div class="lg:col-span-3 flex flex-col gap-6">
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
-                <div class="cyber-panel p-4 rounded flex justify-between items-center">
-                    <div>
-                        <p class="text-xs text-gray-400">TOTAL BANNED ATTACKERS</p>
-                        <h2 class="text-3xl font-black text-red-500 cyber-title mt-1" id="count-banned">0</h2>
-                    </div>
-                    <i class="fa-solid fa-user-slash text-3xl text-red-900"></i>
-                </div>
-                <div class="cyber-panel p-4 rounded flex justify-between items-center">
-                    <div>
-                        <p class="text-xs text-gray-400">BUFFER INCOMING MEMORY</p>
-                        <h2 class="text-3xl font-black text-cyan-400 cyber-title mt-1" id="count-mem">8.6 MB</h2>
-                    </div>
-                    <i class="fa-solid fa-database text-3xl text-cyan-900"></i>
-                </div>
-                <div class="cyber-panel p-4 rounded flex justify-between items-center">
-                    <div>
-                        <p class="text-xs text-gray-400">IPS RECOGNIZED</p>
-                        <h2 class="text-3xl font-black text-purple-400 cyber-title mt-1">LOCALHOST</h2>
-                    </div>
-                    <i class="fa-solid fa-network-wired text-3xl text-purple-900"></i>
-                </div>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="cyber-panel p-4 rounded">
+                <h3 class="cyber-title text-sm font-bold mb-2 text-cyan-300"><i class="fa-solid fa-chart-line mr-2"></i>TRAFFIC INTRUSION ANOMALIES</h3>
+                <div class="h-48 w-full"><canvas id="intrusionChart"></canvas></div>
             </div>
+            <div class="cyber-panel p-4 rounded">
+                <h3 class="cyber-title text-sm font-bold mb-2 text-red-500"><i class="fa-solid fa-triangle-exclamation mr-2"></i>REAL-TIME ATTACK INCIDENTS</h3>
+                <div id="live-incidents-box" class="text-xs space-y-2 h-40 overflow-y-auto font-mono text-red-400"></div>
+            </div>
+        </div>
+    </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div class="cyber-panel p-4 rounded">
-                    <h3 class="cyber-title text-sm font-bold mb-2 text-cyan-300"><i class="fa-solid fa-chart-line mr-2"></i>TRAFFIC INTRUSION ANOMALIES</h3>
-                    <div class="h-48 w-full"><canvas id="intrusionChart"></canvas></div>
-                </div>
-                <div class="cyber-panel-alert p-4 rounded flex flex-col justify-between">
-                    <div>
-                        <h3 class="font-bold text-sm mb-2 text-red-500 tracking-wider"><i class="fa-solid fa-triangle-exclamation mr-2"></i>REAL-TIME ATTACK INCIDENTS</h3>
-                        <div id="live-incidents-box" class="text-xs space-y-2 h-40 overflow-y-auto font-mono text-red-400">
-                            </div>
-                    </div>
-                </div>
+    <div id="view-scanner" class="cyber-panel p-6 rounded hidden-view space-y-4">
+        <h2 class="cyber-title text-lg font-bold text-cyan-400"><i class="fa-solid fa-radar mr-2"></i>OFFENSIVE VULNERABILITY HUNTER</h2>
+        <p class="text-xs text-gray-400">Enter target domain to launch local fuzzing algorithms against critical injection vulnerabilities.</p>
+        <div class="flex flex-col md:flex-row gap-4">
+            <input type="text" id="scan-target" placeholder="https://example.com" class="bg-black border border-cyan-400 p-2 text-sm text-cyan-400 flex-grow outline-none">
+            <button onclick="runExploitScan()" class="bg-cyan-500 text-black px-6 py-2 font-bold text-xs uppercase tracking-wider hover:bg-cyan-400">Execute Scan</button>
+        </div>
+        <div id="scan-results" class="bg-black/50 p-4 border border-cyan-800 text-xs font-mono h-48 overflow-y-auto text-gray-300">[⚡] READY TO AUDIT POOLS...</div>
+    </div>
+
+    <div id="view-vault" class="cyber-panel p-6 rounded hidden-view space-y-4">
+        <h2 class="cyber-title text-lg font-bold text-red-500"><i class="fa-solid fa-vault mr-2"></i>ISOLATED IP BLACKLIST ARCHIVE</h2>
+        <div class="overflow-x-auto">
+            <table class="w-full text-left text-xs text-gray-300 font-mono">
+                <thead>
+                    <tr class="border-b border-red-900 text-red-400 bg-red-950/20">
+                        <th class="p-2">ATTACKER IP</th>
+                        <th class="p-2">VIOLATION ROOT</th>
+                        <th class="p-2">TIMESTAMP</th>
+                    </tr>
+                </thead>
+                <tbody id="vault-table-body"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <div id="view-operator" class="cyber-panel p-8 rounded hidden-view max-w-lg mx-auto text-center space-y-6 border-2 border-purple-500/50">
+        <div class="w-24 h-24 bg-gradient-to-tr from-cyan-500 to-purple-600 rounded-full mx-auto flex items-center justify-center border-2 border-cyan-400 shadow-[0_0_20px_#00ffcc]">
+            <span class="text-3xl font-black text-black tracking-widest font-mono">TX</span>
+        </div>
+        <div>
+            <h2 class="cyber-title text-xl font-black text-cyan-400">MOHAMED M. ABDELAZIZ</h2>
+            <p class="text-sm text-purple-400 font-bold mt-1">Founder of NovaDev & Chief Cyber Architect</p>
+            <p class="text-xs text-gray-400 mt-2 max-w-sm mx-auto font-mono">Expert in Automated Defensive Architecture, Backend Optimization, and Zero-Day Ransomware Immunizers.</p>
+        </div>
+        <div class="border-t border-cyan-900 pt-4 flex flex-col sm:flex-row justify-center gap-4 text-xs">
+            <a href="https://wa.me/201062141505" target="_blank" class="flex items-center justify-center gap-2 bg-emerald-950 border border-emerald-500 px-4 py-2 hover:bg-emerald-900 transition text-emerald-400 font-bold rounded">
+                <i class="fa-brands fa-whatsapp text-lg"></i> SECURE WHATSAPP
+            </a>
+            <div class="flex items-center justify-center gap-2 bg-slate-900 border border-slate-500 px-4 py-2 text-slate-300 rounded">
+                <i class="fa-solid fa-headset"></i> TEL: +201062141505
             </div>
         </div>
     </div>
 
     <script>
-        // Setup Live Graphical Intrusion Vectors
+        function switchView(viewId) {
+            ['dashboard', 'scanner', 'vault', 'operator'].forEach(id => {
+                document.getElementById('view-' + id).classList.add('hidden-view');
+                document.getElementById('btn-' + id).classList.remove('cyber-tab-active');
+            });
+            document.getElementById('view-' + viewId).classList.remove('hidden-view');
+            document.getElementById('btn-' + viewId).classList.add('cyber-tab-active');
+        }
+
         const ctx = document.getElementById('intrusionChart').getContext('2d');
         const intrusionChart = new Chart(ctx, {
             type: 'line',
             data: {
-                labels: ['10s ago', '8s ago', '6s ago', '4s ago', '2s ago', 'NOW'],
-                datasets: [{
-                    label: 'Threat Mitigation Vectors',
-                    data: [12, 19, 3, 5, 2, 3],
-                    borderColor: '#00ffcc',
-                    backgroundColor: 'rgba(0, 255, 204, 0.05)',
-                    borderWidth: 2,
-                    tension: 0.4
-                }]
+                labels: ['10s', '8s', '6s', '4s', '2s', 'NOW'],
+                datasets: [{ label: 'Threat Mitigation Vectors', data: [5, 12, 3, 9, 2, 4], borderColor: '#00ffcc', backgroundColor: 'rgba(0,255,204,0.05)', borderWidth: 2 }]
             },
-            options: { responsive: true, maintainAspectRatio: false, scaless: { y: { beginAtZero: true } } }
+            options: { responsive: true, maintainAspectRatio: false }
         });
 
-        // Async Fetch Engine Integration
-        async function updateDashboardMetrics() {
+        async function updateMetrics() {
             try {
                 const response = await fetch('/api/v1/quantum/dashboard');
                 const data = await response.json();
+                document.getElementById('count-banned').innerText = data.total_isolated_hosts || 0;
                 
-                if(data.engine_status) {
-                    document.getElementById('system-status').innerText = "CORE: " + data.engine_status;
-                    document.getElementById('count-banned').innerText = data.total_isolated_hosts || data.telemetry?.total_banned_ips || 0;
-                    
-                    // Injected dynamic actions inside visual panels
-                    const incidentsBox = document.getElementById('live-incidents-box');
-                    incidentsBox.innerHTML = '';
-                    const activities = data.recent_activities || data.telemetry?.recent_events || [];
-                    
-                    if(activities.length === 0) {
-                        incidentsBox.innerHTML = `<div class="p-2 bg-black/40 border border-green-900 text-green-400">[✔] MONITORING CHANNELS: NO CURRENT INTRUSIONS DECLARED.</div>`;
-                    } else {
-                        activities.forEach(act => {
-                            incidentsBox.innerHTML += `<div class="p-1 bg-red-950/20 border-l-2 border-red-500 font-mono mb-1">[🚨] THREAT FILTER PASSED IP: ${act.ip || '127.0.0.1'} | PATH: ${act.path || '/'}</div>`;
-                        });
-                    }
+                const incidentsBox = document.getElementById('live-incidents-box');
+                incidentsBox.innerHTML = '';
+                if(!data.recent_activities || data.recent_activities.length === 0) {
+                    incidentsBox.innerHTML = `<div class="p-2 border border-green-900 text-green-400">[✔] MONITORING CHANNELS ACTIVE.</div>`;
+                } else {
+                    data.recent_activities.forEach(act => {
+                        incidentsBox.innerHTML += `<div>[🚨] INTERCEPTED IP: ${act.ip} -> PATH: ${act.path}</div>`;
+                    });
                 }
-            } catch (err) {
-                console.log("Telemetry pipeline syncing offline...");
+
+                const tableBody = document.getElementById('vault-table-body');
+                tableBody.innerHTML = '';
+                if(!data.blacklisted_ips || data.blacklisted_ips.length === 0) {
+                    tableBody.innerHTML = `<tr><td colspan="3" class="p-4 text-center text-gray-500">NO BANNED REQUISITIONS STORED.</td></tr>`;
+                } else {
+                    data.blacklisted_ips.forEach(b => {
+                        tableBody.innerHTML += `<tr class="border-b border-gray-900"><td class="p-2 text-red-400">${b.ip}</td><td class="p-2">${b.reason}</td><td class="p-2 text-gray-500">${b.banned_at}</td></tr>`;
+                    });
+                }
+            } catch (e) {}
+        }
+
+        async function runExploitScan() {
+            const target = document.getElementById('scan-target').value;
+            if(!target) return alert('Enter target address first!');
+            const box = document.getElementById('scan-results');
+            box.innerHTML = `[🔎] INITIALIZING INJECTION ATTACK FOOTPRINT ON: ${target}...\n[⚙] TESTING SQL PAYLOADS...\n`;
+            
+            try {
+                const res = await fetch('/api/v1/quantum/trigger-scan', {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify({ target })
+                });
+                const result = await res.json();
+                if(!result.vulnerabilities_found || result.vulnerabilities_found.length === 0) {
+                    box.innerHTML += `[✔] AUDIT COMPLETE: NO APPARENT EXPLOIT VECTOR REACHABLE.`;
+                } else {
+                    box.innerHTML += `[💥] CRITICAL THREAT DETECTED:\n` + JSON.stringify(result.vulnerabilities_found, null, 2);
+                }
+            } catch(e) {
+                box.innerHTML += `[❌] PIPE CONNECTION ERROR.`;
             }
         }
 
-        function triggerQuickScan() {
-            alert("[⚙] NOVACORE VULNERABILITY MATRIX POOL RUNNING ON LOCAL ENDPOINTS...");
-        }
-
-        // Live Interval Hooks
-        setInterval(updateDashboardMetrics, 3000);
-        window.onload = updateDashboardMetrics;
+        setInterval(updateMetrics, 3000);
+        window.onload = updateMetrics;
     </script>
 </body>
 </html>
