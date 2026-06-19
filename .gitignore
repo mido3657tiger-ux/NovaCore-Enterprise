@@ -1,0 +1,16 @@
+# Logs directory (حظر رفع اللوجات الضخمة)
+logs/
+*.log
+
+# Dependency directories
+node_modules/
+
+# Local databases & vaults
+core/security_vault.json
+
+# Environment variables (الملف السري الحقيقي)
+.env
+
+# OS Metadata
+.DS_Store
+Thumbs.db
