@@ -1,20 +1,58 @@
 # ⚡ NOVACORE QUANTUM SHIELD v4.0.0 ⚡
-## 🛡️ Next-Gen AI Threat Hunting & Zero-Day Ransomware Immunizer Core 🛡️
+## 🛡️ NEXT-GENERATION AI THREAT HUNTING ENGINE & ZERO-DAY RANSOMWARE IMMUNIZER 🛡️
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Security-Cyber-red?style=for-the-badge&logo=kali-linux&logoColor=white" />
-  <img src="https://img.shields.io/badge/AI-Behavioral-blue?style=for-the-badge&logo=openai&logoColor=white" />
-  <img src="https://img.shields.io/badge/Engine-Node.js-green?style=for-the-badge&logo=node.js&logoColor=white" />
-  <img src="https://img.shields.io/badge/Database-Sealed_Vault-orange?style=for-the-badge&logo=json&logoColor=white" />
+  <img src="https://img.shields.io/badge/SECURITY-CYBER_OPERATIONS-red?style=for-the-badge&logo=kali-linux&logoColor=white" />
+  <img src="https://img.shields.io/badge/AI_ENGINE-HEURISTIC_BEHAVIOR-blue?style=for-the-badge&logo=openai&logoColor=white" />
+  <img src="https://img.shields.io/badge/RUNTIME-NODE.JS_ENTERPRISE-green?style=for-the-badge&logo=node.js&logoColor=white" />
+  <img src="https://img.shields.io/badge/DATABASE-SEALED_CRYPTO_VAULT-orange?style=for-the-badge&logo=json&logoColor=white" />
+  <img src="https://img.shields.io/badge/TELEMETRY-AUTOMATED_TELEGRAM-0088CC?style=for-the-badge&logo=telegram&logoColor=white" />
 </p>
 
 ---
 
-## 💻 COMPLETE ARCHITECTURE MATRIX (ALL-IN-ONE BUILD)
+## 🛠️ COMPLETE ARCHITECTURE SYSTEM MATRIX
 
-نظام الحماية والاختراق الشامل **NovaCore Quantum Shield** مدمج بالكامل في كود برمي خطير ومتقدم جداً يجمع الجانب الهجومي والدفاعي في نظام ذكي واحد.
+```text
+=================================================================================
+ ███╗   ██╗ ██████╗ ██╗   ██╗ █████╗  ██████╗ ██████╗ ██████╗ ███████╗
+ ████╗  ██║██╔═══██╗██║   ██║██╔══██╗██╔════╝██╔═══██╗██╔══██╗██╔════╝
+ ██╔██╗ ██║██║   ██║██║   ██║███████║██║     ██║   ██║██████╔╝█████╗  
+ ██║╚██╗██║██║   ██║╚██╗ ██╔╝██╔══██║██║     ██║   ██║██╔══██╗██╔══╝  
+ ██║ ╚████║╚██████╔╝ ╚████╔╝ ██║  ██║╚██████╗╚██████╔╝██║  ██║███████╗
+ ╚═╝  ╚═══╝ ╚═════╝   ╚═══╝  ╚═╝  ╚═╝ ╚═════╝ ╚═════╝ ╚═╝  ╚═╝╚══════╝
+=================================================================================
+             [+] SYSTEM PROFILE: TIGER-X ENTERPRISE SECURITY CORE v4.0.0
+             [+] DEPLOYMENT VECTOR: MULTI-THREADED HYBRID DEFENSE SHIELD
+             [+] STATUS: CODENAME NOVACORE DEPLOYED AND OPERATIONAL
+=================================================================================
 
-```javascript
+                     ┌───────────────────────────────────────┐
+                     │     NOVACORE HYBRID SECURITY SHIELD   │
+                     └───────────────────┬───────────────────┘
+                                         │
+                ┌────────────────────────┴────────────────────────┐
+                ▼                                                 ▼
+   ┌───────────────────────────┐                     ┌───────────────────────────┐
+   │    OFFENSIVE SUBSYSTEM    │                     │    DEFENSIVE SUBSYSTEM    │
+   └────────────┬──────────────┘                     └────────────┬──────────────┘
+                │                                                 │
+        ┌───────┴───────┐                                 ┌───────┴───────┐
+        ▼               ▼                                 ▼               ▼
+ ┌─────────────┐ ┌─────────────┐                   ┌─────────────┐ ┌─────────────┐
+ │VULNERABILITY│ │  INTELLIGENT│                   │  QUANTUM    │ │ AI HEURISTIC│
+ │   HUNTER    │ │   DECOY     │                   │ ANTI-DDOS   │ │  BEHAVIORAL │
+ │ (OFFENSIVE) │ │ (HONEYPOT)  │                   │ FIREWALL    │ │   ENGINE    │
+ └─────────────┘ └─────────────┘                   └─────────────┘ └─────────────┘
+        │               │                                 │               │
+        └───────┬───────┘                                 └───────┬───────┘
+                │                                                 │
+                └────────────────────────┬────────────────────────┘
+                                         │
+                                         ▼
+                     ┌───────────────────────────────────────┐
+                     │     INTERNAL SEALED CRYPTO VAULT      │
+                     └───────────────────────────────────────┘
 // =================================================================================
 // 🛡️ NOVACORE QUANTUM SHIELD - ENTERPRISE ALL-IN-ONE MULTI-THREADED SYSTEM CORE
 // =================================================================================
@@ -49,14 +87,16 @@ class LocalSecurityDatabase {
         if (!db.blacklisted_ips.some(item => item.ip === ip)) {
             db.blacklisted_ips.push({ ip, reason, banned_at: new Date().toISOString() });
             this.writeData(db);
-            console.log(`[💾 VAULT] Banned IP: ${ip} -> Reason: ${reason}`);
+            console.log(`\n[💾 VAULT UPDATE] IMMEDIATE EXCLUSION POLICY ENFORCED`);
+            console.log(`[▶] TARGET BAN IDENTIFIER: ${ip}`);
+            console.log(`[▶] SECURITY PRIVILEGE CRITERIA: ${reason}\n`);
         }
     }
 }
 const db = new LocalSecurityDatabase();
 
 // =================================================================================
-// [2] 🧠 AI BEHAVIORAL THREAT HUNTING ENGINE (Anti-Ransomware)
+// [2] 🧠 AI BEHAVIORAL THREAT HUNTING ENGINE (ANTI-RANSOMWARE)
 // =================================================================================
 class AIBehavioralAnalyzer {
     constructor() {
@@ -81,7 +121,7 @@ class AIBehavioralAnalyzer {
 const aiEngine = new AIBehavioralAnalyzer();
 
 // =================================================================================
-// [3] 🔎 ADVANCED VULNERABILITY HUNTER & EXPLOIT INJECTOR (Offensive Scanner)
+// [3] 🔎 ADVANCED VULNERABILITY HUNTER & EXPLOIT INJECTOR (OFFENSIVE SCANNER)
 // =================================================================================
 class VulnerabilityHunter {
     constructor() {
@@ -92,14 +132,14 @@ class VulnerabilityHunter {
     }
     async scanTarget(targetUrl) {
         let reports = [];
-        console.log(`[🔎 HUNTER] Scanning Target for SQLi/XSS: ${targetUrl}`);
+        console.log(`[🔎 HUNTER RUNTIME] DEPLOYING ADVANCED PENETRATION VECTORS: ${targetUrl}`);
         for (let payload of this.payloads.sqli) {
             try {
                 const res = await axios.get(`${targetUrl}?id=${encodeURIComponent(payload)}`, { timeout: 2000 });
                 if (res.data.toString().toLowerCase().includes("sql syntax") || res.data.toString().toLowerCase().includes("mysql")) {
                     reports.push({ type: "SQL Injection", severity: "CRITICAL", payload });
                 }
-            } catch (e) { /* Bypass timeouts */ }
+            } catch (e) { /* OVERRIDE BREAKPOINTS */ }
         }
         return reports;
     }
@@ -115,12 +155,14 @@ class NovaHoneypot {
         this.ports.forEach(port => {
             const server = net.createServer((socket) => {
                 const attackerIp = socket.remoteAddress;
-                console.error(`[🚨 HONEYPOT TRIGGERED] Unauthorized connection attempt from ${attackerIp} on Port ${port}`);
+                console.error(`\n[🚨 HONEYPOT INTRUSION ALARM] UNAUTHORIZED CONNECTIONS INBOUND`);
+                console.error(`[▶] ATTACKER IP PROFILE: ${attackerIp}`);
+                console.error(`[▶] TARGET COMPROMISE INTERCEPT PORT: ${port}\n`);
                 db.saveBannedIp(attackerIp, `Honeypot Decoy Intrusion Port ${port}`);
                 socket.write("SSH-2.0-OpenSSH_7.4p1 Debian\r\n");
                 socket.end();
             });
-            server.listen(port, () => console.log(`[🎯 HONEYPOT] Trap active on port ${port}`));
+            server.listen(port, () => console.log(`[🎯 HONEYPOT ACTIVE] DECOY MATRIX POOL INITIATED ON PORT: ${port}`));
         });
     }
 }
@@ -135,13 +177,13 @@ function firewallMiddleware(req, res, next) {
     const clientIp = req.ip || req.headers['x-forwarded-for'] || "127.0.0.1";
     const currentTime = Date.now();
 
-    // Check Blacklist
+    // POLICY CHECK: BLACKLIST RULESET
     const currentDb = db.readData();
     if (currentDb.blacklisted_ips.some(item => item.ip === clientIp)) {
-        return res.status(403).json({ error: "Access Denied. Permanently banned by NovaCore Shield." });
+        return res.status(403).json({ error: "ACCESS TERMINATED. HARD REJECTION RULE SET BY NOVACORE SHIELD POLICIES." });
     }
 
-    // Rate Limiting (DDoS Prevention)
+    // QUANTUM TRAFFIC EVALUATION BLOCK (ANTI-DDOS OVERFLOW VECTOR)
     if (!ipRequestMap.has(clientIp)) ipRequestMap.set(clientIp, []);
     let requests = ipRequestMap.get(clientIp).filter(time => (currentTime - time) < 10000);
     requests.push(currentTime);
@@ -149,14 +191,14 @@ function firewallMiddleware(req, res, next) {
 
     if (requests.length > 30) {
         db.saveBannedIp(clientIp, "DDoS Aggressive Traffic Abuses");
-        return res.status(429).json({ error: "DDoS Attempt Intercepted. IP Banned." });
+        return res.status(429).json({ error: "DDOS SYMMETRIC FLOOD INHIBITED. COMMUNICATIONS DROPPED." });
     }
 
-    // Advanced XSS / Injection Check on Input Text
+    // WEB APPLICATION APPLICATION FILTER INTERCEPT (DEEP PATTERN RECOGNITION MATRIX)
     const regexXss = /(<script.*?>.*?<\/script>|javascript:|onerror=|onload=)/gi;
     if (req.body && JSON.stringify(req.body).match(regexXss)) {
         db.saveBannedIp(clientIp, "Malicious XSS Script Injection");
-        return res.status(400).json({ error: "Payload dropped by Firewall." });
+        return res.status(400).json({ error: "MALICIOUS INJECTION ENVELOPE ISOLATED AND DESTROYED BY FIREWALL." });
     }
 
     next();
@@ -164,29 +206,33 @@ function firewallMiddleware(req, res, next) {
 app.use(firewallMiddleware);
 
 // =================================================================================
-// [6] 🌐 CENTRAL ENDPOINTS & CONTROL TELEMETRY
+// [6] 🌐 CENTRAL CONTROL ENDPOINTS & TELEMETRY DASHBOARD
 // =================================================================================
 app.get('/api/v1/quantum/dashboard', (req, res) => {
     const data = db.readData();
     res.status(200).json({
-        engine_status: "ONLINE",
-        codename: "NovaCore-Quantum-Shield",
-        version: "4.0.0",
-        total_banned_nodes: data.blacklisted_ips.length,
-        banned_ips: data.blacklisted_ips
+        ENGINE_STATUS: "ONLINE",
+        CODENAME: "NOVACORE-QUANTUM-SHIELD",
+        VERSION: "4.0.0",
+        TOTAL_ISOLATED_HOSTS: data.blacklisted_ips.length,
+        ISOLATION_RECORDS: data.blacklisted_ips
     });
 });
 
 app.post('/api/v1/quantum/trigger-scan', async (req, res) => {
     const { target } = req.body;
-    if(!target) return res.status(400).json({ error: "Missing Target parameter" });
+    if(!target) return res.status(400).json({ error: "MISSING VALID SCAN EXECUTION VECTOR TARGET" });
     const results = await hunter.scanTarget(target);
-    res.status(200).json({ success: true, target, vulnerabilities_found: results });
+    res.status(200).json({ SUCCEEDED: true, PARSED_TARGET: target, THREAT_VECTORS_IDENTIFIED: results });
 });
 
-// Start Server
+// INITIALIZE COMMAND BOUND INTERFACES
 app.listen(PORT, () => {
     console.log(`\n================================================================`);
-    console.log(`[🚀 NOVACORE ACTIVE] Enterprise Quantum Shield Engine Deployed!`);
+    console.log(`[🚀 NOVACORE RUNTIME MODULE] ENTERPRISE QUANTUM CORE IS ACTIVE!`);
+    console.log(`[🌐 ENDPOINT RECEPTOR] MONITORING INTERFACES AT PORT: ${PORT}`);
     console.log(`================================================================\n`);
 });
+🚀 ENTERPRISE INDUSTRIAL MONETIZATION COMPLIANCE STRATEGIES
+​CYBER OPERATIONS MONETIZATION: DEPLOY AS A SAAS (SECURITY-AS-A-SERVICE) CLOUD CONTROLLER EXTENSION PLUG-IN AGENT DESIGNED TO EXTEND COMPLETE SECURITY IMMUNITY METRICS TO HIGH-END ENTERPRISE DATACENTER TOPOLOGIES.
+​OFFENSIVE AUDITING PIPELINES: UTILIZE INTEGRATED HUNTER MODULE ENGINES TO EXECUTE AUTONOMOUS AUDITING POLICIES ACROSS BUG BOUNTY CLEARINGHOUSES AND REVENUE CHANNELS IN REAL-TIME PIPELINES.
